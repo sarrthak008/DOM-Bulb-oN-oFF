@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULB</title>
+    <style>
+          body{
+             height: 100vh;
+             width: 100vw;
+             background-color: rgb(62, 61, 61);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             overflow: hidden;
+          }
+        
+          #container{
+            height: 70vh;
+            width: 25vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+          }
+          
+          #image{
+            height: 50vh;
+          }
+         
+          .light{
+            filter: drop-shadow(10px 100px 100px rgb(244, 224, 6));
+          }
+
+          #btn{
+            padding: 0.7vh 3vw;
+            font-size: 1.3vw;
+            font-weight: 900;
+            background-color: blue;
+            color: whitesmoke;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+          }
+  
+
+          @media screen and (max-width:480px) {
+                
+          #container{
+            height: 70vh;
+            width: 75vw;
+          }
+          #btn{
+            padding: 2.5vh 20vw;
+            font-size: 4.3vw;
+          }
+          }
+
+
+          @media screen and (min-width:481px) and (max-width:720px) {
+                
+                #btn{
+                  padding: 1.5vh 4vw;
+                  font-size: 2.3vw;
+                }
+                }
+
+
+                @media screen and (min-width:721px) and (max-width:1030px) {
+                
+                #btn{
+                  padding: 1.5vh 4vw;
+                  font-size: 1.3vw;
+                }
+                }
+
+    </style>
+</head>
+<body>
+     <div id="container">
+           <img src="./off.png" alt="" id="image">
+           <button id="btn" onclick="bulbStatus()">TOGGLE</button>
+     </div>
+
+     <script>
+         function bulbStatus(){
+
+             let imgSource =  document.getElementById("image")
+             if(imgSource.src.includes('off.png')){
+                 imgSource.src= 'on.png'
+                 imgSource.classList.add('light')
+             }else{
+               imgSource.src= 'off.png'
+               imgSource.classList.remove('light')
+             }
+                 
+         }
+     </script>
+</body>
+</html>
